@@ -1,0 +1,1 @@
+# nextjs_full_template
