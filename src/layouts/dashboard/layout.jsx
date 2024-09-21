@@ -104,7 +104,7 @@ export function DashboardLayout({ sx, children, header, data }) {
                   sx={{
                     mr: 1,
                     ml: -1,
-                    [theme.breakpoints.up(layoutQuery)]: { display: 'none' },
+                    [theme.breakpoints.up(layoutQuery)]: { display: settings.navLayout === 'hide' ? 'flex' : 'none' },
                   }}
                 />
                 <NavMobile
@@ -162,7 +162,7 @@ export function DashboardLayout({ sx, children, header, data }) {
        * Sidebar
        *************************************** */
       sidebarSection={
-        isNavHorizontal ? null : (
+        isNavHorizontal || settings.navLayout === 'hide' ? null : (
           <NavVertical
             data={navData}
             isNavMini={isNavMini}

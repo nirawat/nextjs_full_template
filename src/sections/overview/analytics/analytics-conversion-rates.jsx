@@ -15,18 +15,18 @@ export function AnalyticsConversionRates({ title, subheader, chart, ...other }) 
   const theme = useTheme();
 
   // SignalR Message ----------------------------
-  const signalRMessage = useSignalRContext();
-  const [message, setMessage] = useState(null);
+  const { user, message } = useSignalRContext();
+  const [ isMessage, setIsMessage] = useState(false);
   const messageId = 'Code A';
 
   useEffect(() => {
-    if(signalRMessage) {
-      if(signalRMessage.id === messageId) {
-        console.log('message: ', signalRMessage.data);
-        setMessage(signalRMessage.data);
+    if(user) {
+      if(user === messageId) {
+        console.log('message: ', message);
+        setIsMessage(true);
       }
     }
-  }, [signalRMessage]);
+  }, [user]);
   // --------------------------------------------
 
 
@@ -65,7 +65,7 @@ export function AnalyticsConversionRates({ title, subheader, chart, ...other }) 
 
   return (
     <Card {...other}>
-      <CardHeader title={title} subheader={subheader} />
+      <CardHeader title={title} subheader={subheader + (isMessage === true ? message.name : '')} />
       <Chart
         type="bar"
         series={chart.series}

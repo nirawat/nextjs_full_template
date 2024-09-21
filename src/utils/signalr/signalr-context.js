@@ -13,6 +13,7 @@ const SignalRContext = createContext();
 // Solution 1
 // Create a provider component
 export const SignalRProvider = ({ children }) => {
+  const [user, setUser] = useState(null);
   const [message, setMessage] = useState(null);
   const SIGNALR_URL = CONFIG.serverApi.Url + CONFIG.serverApi.SignalR.Hub;
 
@@ -22,7 +23,8 @@ export const SignalRProvider = ({ children }) => {
     connection.start()
       .then(() => {
         console.log('SignalR connected');
-        connection.on(CONFIG.serverApi.SignalR.Chanel, (message) => {
+        connection.on(CONFIG.serverApi.SignalR.Chanel, (user, message) => {
+          setUser(user);
           setMessage(message);
         });
       })
@@ -35,7 +37,7 @@ export const SignalRProvider = ({ children }) => {
   }, [SIGNALR_URL]);
 
   return (
-    <SignalRContext.Provider value={message}>
+    <SignalRContext.Provider value={{ user, message}}>
       {children}
     </SignalRContext.Provider>
   );

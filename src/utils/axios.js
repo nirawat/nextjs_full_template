@@ -38,7 +38,7 @@ export const endpoints = {
   auth: {
     //me: '/api/auth/me',
     //signIn: '/api/auth/sign-in',
-    me: '/api/AccountServices/GetProfile',
+    me: '/api/AccountService/GetAccountUserProfiles',
     signIn: '/connect/token', 
     signUp: '/api/auth/sign-up',
   },
