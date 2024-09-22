@@ -55,6 +55,7 @@ export const navData = [
       { title: 'Booking', path: paths.dashboard.general.booking, icon: ICONS.booking },
       { title: 'File', path: paths.dashboard.general.file, icon: ICONS.file },
       { title: 'Course', path: paths.dashboard.general.course, icon: ICONS.course },
+      { title: 'Layout Management', path: paths.dashboard.general.layoutmgr, icon: ICONS.analytics },
     ],
   },
   /**
