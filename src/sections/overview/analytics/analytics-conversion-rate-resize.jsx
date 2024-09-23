@@ -11,7 +11,7 @@ import { useSignalRContext } from 'src/utils/signalr/signalr-context';
 
 // ----------------------------------------------------------------------
 
-export function AnalyticsConversionRates({ title, subheader, chart, ...other }) {
+export function AnalyticsConversionRateResize({ title, subheader, chart, ...other }) {
   const theme = useTheme();
 
   // SignalR Message ----------------------------
@@ -64,13 +64,12 @@ export function AnalyticsConversionRates({ title, subheader, chart, ...other }) 
   });
 
   return (
-    <Card  sx={{ with: '100%', minWidth: 300, height: '100%' }} {...other}>
+    <Card sx={{ with: '100%', minWidth: 300, height: '100%' }} {...other}>
       <CardHeader title={title} subheader={subheader + (isMessage === true ? message.name : '')} />
       <Chart
         type="bar"
         series={chart.series}
         options={chartOptions}
-        // height={160}
         loadingProps={{ sx: { p: 2.5 } }}
         sx={{ py: 2.5, pl: 1, pr: 2.5 }}
       />

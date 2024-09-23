@@ -1,17 +1,13 @@
 'use client';
 
-import React, { useState } from "react";
-
-import Box from '@mui/material/Box';
-import { cardClasses } from '@mui/material/Card';
-import Typography from '@mui/material/Typography';
+import React from "react";
 
 import { varAlpha } from 'src/theme/styles';
 import { DashboardContent } from 'src/layouts/dashboard';
 
-export function OverviewLayoutMgrView() {
+import ReactGridLayoutView from "src/components/layout-grid/analysis/react-grid-layout-view"; // Adjust the path as needed
 
-
+export function OverviewLayoutView() {
 
   return (
     <DashboardContent
@@ -23,7 +19,7 @@ export function OverviewLayoutMgrView() {
         }),
       }}
     >
-      hello!
+      <ReactGridLayoutView />
     </DashboardContent>
   );
 }

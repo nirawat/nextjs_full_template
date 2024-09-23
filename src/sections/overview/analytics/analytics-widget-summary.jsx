@@ -75,6 +75,7 @@ export function AnalyticsWidgetSummary({
         position: 'relative',
         color: `${color}.darker`,
         backgroundColor: 'common.white',
+        height: '100%',
         ...sx,
       }}
       {...other}

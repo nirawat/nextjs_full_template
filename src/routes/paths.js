@@ -109,7 +109,8 @@ export const paths = {
       booking: `${ROOTS.DASHBOARD}/booking`,
       file: `${ROOTS.DASHBOARD}/file`,
       course: `${ROOTS.DASHBOARD}/course`,
-      layoutmgr: `${ROOTS.DASHBOARD}/layoutmgr`,
+      layoutmanage: `${ROOTS.DASHBOARD}/layout-grid/manage`,
+      layoutview: `${ROOTS.DASHBOARD}/layout-grid/view`,
     },
     user: {
       root: `${ROOTS.DASHBOARD}/user`,

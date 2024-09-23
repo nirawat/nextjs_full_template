@@ -24,11 +24,11 @@ export function Chart({
   sx,
   type,
   series,
-  height,
   options,
   className,
   loadingProps,
   width = '100%',
+  height = '95%',
   ...other
 }) {
   return (
@@ -50,7 +50,7 @@ export function Chart({
         series={series}
         options={options}
         width="100%"
-        height="100%"
+        height= {"90%"}
         loading={loadingProps}
       />
     </Box>
